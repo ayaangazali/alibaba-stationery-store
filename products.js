@@ -7,3 +7,13 @@ var products = [
   {id:5, name:"Grid Hardcover Journal", price:14.50, category:"Notebooks", image:"images/journal_grid.jpg"},
   {id:6, name:"Mini Sticky Notes 8 Pack", price:4.25, category:"Sticky Notes", image:"images/sticky_mini.jpg"}
 ];
+
+// helper to find one product by its id
+function getProduct(id){
+  for(var i=0;i<products.length;i++){
+    if(products[i].id == id){
+      return products[i];
+    }
+  }
+  return null;
+}
