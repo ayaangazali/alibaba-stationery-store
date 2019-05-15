@@ -15,7 +15,32 @@
 
 	<h2>Our Products</h2>
 
+	<div id="productGrid">
+	</div>
+	<div class="clear"></div>
+
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="products.js"></script>
+<script>
+// build the product cards
+function showProducts(){
+	var html = "";
+	for(var i=0;i<products.length;i++){
+		var p = products[i];
+		html += '<div class="product">';
+		html += '<img src="'+p.image+'" alt="'+p.name+'">';
+		html += '<h3>'+p.name+'</h3>';
+		html += '<div class="price">$'+p.price+'</div>';
+		html += '<a href="product.html?id='+p.id+'">View Details</a>';
+		html += '</div>';
+	}
+	$("#productGrid").html(html);
+}
+
+showProducts();
+</script>
 
 </body>
 </html>
