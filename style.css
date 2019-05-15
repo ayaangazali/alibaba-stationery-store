@@ -41,3 +41,46 @@ body {
 	margin: 0 auto;
 	padding: 20px 0;
 }
+
+/* the product grid */
+.product {
+	float: left;
+	width: 210px;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	margin: 10px;
+	padding: 10px;
+	height: 320px;
+	text-align: center;
+	position: relative;
+}
+
+.product img {
+	width: 180px;
+	height: 180px;
+	background-color: #eeeeee;
+	border: 1px solid #dddddd;
+}
+
+.product h3 {
+	font-size: 15px;
+	margin: 8px 0 4px 0;
+	height: 38px;
+}
+
+.product .price {
+	color: #e0533d;
+	font-weight: bold;
+	font-size: 17px;
+	margin-bottom: 8px;
+}
+
+.product a {
+	color: #4a90d9;
+	text-decoration: none;
+	font-size: 13px;
+}
+
+.clear {
+	clear: both;
+}
