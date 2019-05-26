@@ -23,6 +23,37 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="products.js"></script>
+<script>
+// get the id from the url ?id=
+function getQueryParam(name){
+	var url = window.location.search.substring(1);
+	var vars = url.split("&");
+	for(var i=0;i<vars.length;i++){
+		var pair = vars[i].split("=");
+		if(pair[0] == name){
+			return pair[1];
+		}
+	}
+	return null;
+}
+
+var id = getQueryParam("id");
+var p = getProduct(id);
+
+if(p == null){
+	$("#detail").html("<p>Sorry, product not found!</p>");
+}else{
+	var h = "";
+	h += '<div class="detail-img"><img src="'+p.image+'" width="380" height="380" alt="'+p.name+'"></div>';
+	h += '<div class="detail-info">';
+	h += '<h2>'+p.name+'</h2>';
+	h += '<p>Category: '+p.category+'</p>';
+	h += '<div class="price">$'+p.price+'</div>';
+	h += '<p>Great quality stationery, perfect for school, office or bullet journaling. Limited stock available!</p>';
+	h += '</div>';
+	$("#detail").html(h);
+}
+</script>
 
 </body>
 </html>
