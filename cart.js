@@ -11,3 +11,20 @@ function getCart(){
 function saveCart(cart){
 	localStorage.setItem("cart", JSON.stringify(cart));
 }
+
+function addToCart(id){
+	var cart = getCart();
+	// check if already in cart
+	var found = false;
+	for(var i=0;i<cart.length;i++){
+		if(cart[i].id == id){
+			cart[i].qty = cart[i].qty + 1;
+			found = true;
+		}
+	}
+	if(found == false){
+		cart.push({id: id, qty: 1});
+	}
+	saveCart(cart);
+	alert("Added to cart!");
+}
