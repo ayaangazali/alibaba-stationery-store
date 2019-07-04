@@ -26,5 +26,25 @@ function addToCart(id){
 		cart.push({id: id, qty: 1});
 	}
 	saveCart(cart);
+	updateCartCount();
 	alert("Added to cart!");
 }
+
+// count how many items total
+function cartCount(){
+	var cart = getCart();
+	var count = 0;
+	for(var i=0;i<cart.length;i++){
+		count = count + cart[i].qty;
+	}
+	return count;
+}
+
+function updateCartCount(){
+	$("#cartCount").text(cartCount());
+}
+
+// update count when page loads
+$(document).ready(function(){
+	updateCartCount();
+});
