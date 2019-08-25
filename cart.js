@@ -30,6 +30,23 @@ function addToCart(id){
 	alert("Added to cart!");
 }
 
+function removeFromCart(id){
+	var cart = getCart();
+	var newcart = [];
+	for(var i=0;i<cart.length;i++){
+		if(cart[i].id != id){
+			newcart.push(cart[i]);
+		}
+	}
+	saveCart(newcart);
+	updateCartCount();
+}
+
+function clearCart(){
+	localStorage.removeItem("cart");
+	updateCartCount();
+}
+
 // count how many items total
 function cartCount(){
 	var cart = getCart();
