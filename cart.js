@@ -61,6 +61,19 @@ function updateCartCount(){
 	$("#cartCount").text(cartCount());
 }
 
+// figure out the total price
+function cartTotal(){
+	var cart = getCart();
+	var total = 0;
+	for(var i=0;i<cart.length;i++){
+		var p = getProduct(cart[i].id);
+		if(p != null){
+			total = total + (p.price * cart[i].qty);
+		}
+	}
+	return total;
+}
+
 // update count when page loads
 $(document).ready(function(){
 	updateCartCount();
