@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Checkout - Cool Stationery Store</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="header">
+	<h1><a href="index.html">Cool Stationery Store</a></h1>
+	<a class="cart-link" href="checkout.html">Cart (<span id="cartCount">0</span>)</a>
+</div>
+
+<div class="container">
+
+	<h2>Your Cart</h2>
+
+	<div id="cartTable"></div>
+	<div id="cartTotal"></div>
+
+	<h2>Checkout</h2>
+	<div class="checkout-form">
+		<form id="checkoutForm">
+			<label>Name</label>
+			<input type="text" id="name" required>
+
+			<label>Email</label>
+			<input type="email" id="email" required>
+
+			<label>Shipping Address</label>
+			<textarea id="address" rows="3" required></textarea>
+
+			<br><br>
+			<button type="submit">Place Order</button>
+		</form>
+	</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="products.js"></script>
+<script src="cart.js"></script>
+
+</body>
+</html>
