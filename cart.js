@@ -74,6 +74,37 @@ function cartTotal(){
 	return total;
 }
 
+// render the cart table on checkout page
+function renderCart(){
+	var cart = getCart();
+	if(cart.length == 0){
+		$("#cartTable").html("<p>Your cart is empty.</p>");
+		$("#cartTotal").html("");
+		return;
+	}
+	var h = "<table>";
+	h += "<tr><th>Product</th><th>Price</th><th>Qty</th><th>Subtotal</th><th></th></tr>";
+	for(var i=0;i<cart.length;i++){
+		var p = getProduct(cart[i].id);
+		var sub = p.price * cart[i].qty;
+		h += "<tr>";
+		h += "<td>"+p.name+"</td>";
+		h += "<td>$"+p.price+"</td>";
+		h += "<td>"+cart[i].qty+"</td>";
+		h += "<td>$"+sub.toFixed(2)+"</td>";
+		h += '<td><a href="javascript:void(0)" onclick="removeItem('+p.id+')">remove</a></td>';
+		h += "</tr>";
+	}
+	h += "</table>";
+	$("#cartTable").html(h);
+	$("#cartTotal").html('<div class="total">Total: $'+cartTotal().toFixed(2)+'</div>');
+}
+
+function removeItem(id){
+	removeFromCart(id);
+	renderCart();
+}
+
 // update count when page loads
 $(document).ready(function(){
 	updateCartCount();
