@@ -20,7 +20,7 @@
 
 	<h2>Checkout</h2>
 	<div class="checkout-form">
-		<form id="checkoutForm">
+		<form id="checkoutForm" onsubmit="return placeOrder()">
 			<label>Name</label>
 			<input type="text" id="name" required>
 
@@ -42,6 +42,20 @@
 <script src="cart.js"></script>
 <script>
 renderCart();
+
+function placeOrder(){
+	var cart = getCart();
+	if(cart.length == 0){
+		alert("Your cart is empty!");
+		return false;
+	}
+	// pretend to send the order somewhere
+	alert("Order received!");
+	clearCart();
+	renderCart();
+	document.getElementById("checkoutForm").reset();
+	return false;
+}
 </script>
 
 </body>

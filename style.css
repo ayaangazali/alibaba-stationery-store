@@ -123,3 +123,24 @@ table td {
 	font-weight: bold;
 	margin-top: 15px;
 }
+
+.checkout-form {
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	padding: 20px;
+	margin-top: 20px;
+	width: 400px;
+}
+
+.checkout-form label {
+	display: block;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.checkout-form input, .checkout-form textarea {
+	width: 380px;
+	padding: 6px;
+	border: 1px solid #cccccc;
+	margin-top: 4px;
+}
