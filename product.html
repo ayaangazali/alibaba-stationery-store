@@ -48,6 +48,9 @@ if(p == null){
 	h += '<div class="detail-img"><img src="'+p.image+'" width="380" height="380" alt="'+p.name+'"></div>';
 	h += '<div class="detail-info">';
 	h += '<h2>'+p.name+'</h2>';
+	if(p.sale == true){
+		h += '<p><span class="sale-badge" style="position:static;">SALE</span></p>';
+	}
 	h += '<p>Category: '+p.category+'</p>';
 	h += '<div class="price">$'+p.price+'</div>';
 	h += '<p>Great quality stationery, perfect for school, office or bullet journaling. Limited stock available!</p>';

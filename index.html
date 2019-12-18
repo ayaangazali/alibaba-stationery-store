@@ -44,6 +44,9 @@ function showProducts(cat){
 			continue;
 		}
 		html += '<div class="product">';
+		if(p.sale == true){
+			html += '<span class="sale-badge">SALE</span>';
+		}
 		html += '<img src="'+p.image+'" alt="'+p.name+'">';
 		html += '<h3>'+p.name+'</h3>';
 		html += '<div class="price">$'+p.price+'</div>';
