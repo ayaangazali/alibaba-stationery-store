@@ -109,6 +109,31 @@ button:hover {
 	clear: both;
 }
 
+/* product detail */
+.detail-img {
+	float: left;
+	width: 380px;
+	height: 380px;
+	background-color: #eeeeee;
+	border: 1px solid #dddddd;
+}
+
+.detail-info {
+	float: left;
+	width: 500px;
+	margin-left: 30px;
+}
+
+.detail-info h2 {
+	font-size: 28px;
+}
+
+.detail-info .price {
+	color: #e0533d;
+	font-size: 24px;
+	font-weight: bold;
+}
+
 /* cart / checkout table */
 table {
 	width: 100%;
